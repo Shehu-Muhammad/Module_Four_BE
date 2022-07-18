@@ -1,12 +1,21 @@
 <?php
+
+//if function is called, it will unset session variables 
+//destroy the session
+//refresh the page
 function restartGame() {
     unset($_SESSION["userArray"]);
+    unset($_SESSION["holidayArray"]);
     session_destroy();
     header("Refresh: 0;");
 }
 
+//if the function is called, it will loop through holiday array
+//subtract todays date from holiday dates 
+//if the number is 0, a boolean variable will be set to true and the loop will be broken out of
+//it says that it will echo out which holiday it is
+//if the number is not 0, it will say today is not a holiday
 function isItAHoliday($holidays, $year, $todaysDate) {
-    // loops through holidays array, if today's date matches any dates in array, it breaks out of loop with a variable set to true
     foreach($holidays as $holiday => $holidayDate) {
         $date = date_create($year."-".$holidayDate);
         $date2 = date_create($todaysDate);
@@ -26,16 +35,14 @@ function isItAHoliday($holidays, $year, $todaysDate) {
     }
 }
 
+//if this function is called, today's date will be printed out
 function getTodaysDate() {
     $todaysDate = date("l\, F d\, Y");
     echo $todaysDate;
 }
 
+//if this function is called, the number of days until next holiday is printed out
 function getNumberOfDayUntilNextHoliday($todaysDateTwo, $holidays, $year) {
-    // date_default_timezone_set('America/New_York');
-    // $todaysDateTwo = date("m-d");
-    // $holidays = array("New Year's" => "01-01", "Valentine's Day" => "02-14", "Saint Patrick's Day" => "03-17", "Juneteenth" => "06-19", "Independence Day" => "07-04", "Halloween" => "10-31", "Christmas Eve" => "12-24", "Christmas" => "12-25", "New Year's Eve" => "12-31");
-    // $year = date("Y");
     foreach($holidays as $holiday => $holidayDate) {
         if($holidayDate > $todaysDateTwo) {
             $date1 = date_create($year."-".$holidayDate);
@@ -45,7 +52,6 @@ function getNumberOfDayUntilNextHoliday($todaysDateTwo, $holidays, $year) {
     $date2 = date_create($year."-".$todaysDateTwo);
     $diff = date_diff($date1, $date2);
     $result = $diff-> format("%a");
-    // echo $diff->format("%a");
     if($result == "1") {
         echo ($result." day");
     } else {
@@ -53,6 +59,7 @@ function getNumberOfDayUntilNextHoliday($todaysDateTwo, $holidays, $year) {
     }
 }
 
+//if this function is called, the next holiday is printed out
 function getNextHoliday($todaysDateTwo, $holidays) {
     foreach($holidays as $holiday => $holidayDate) {
         if($holidayDate > $todaysDateTwo) {

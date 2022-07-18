@@ -2,6 +2,8 @@ const TOGGLE = document.getElementById("showHide");
 TOGGLE.addEventListener("onclick", showHoliday);
 const HOLIDAY = document.getElementById("currentHoliday");
 
+//if button is pressed with id="showHide"
+//it will toggle showing the next holiday or hiding the next holiday
 function showHoliday() {
     //if holiday is hidden, remove hidden attribute
     if(HOLIDAY.hasAttribute("hidden") == true) {
