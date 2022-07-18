@@ -1,6 +1,6 @@
 <?php
 session_start();
-include "functions.php";
+include "php functions/functions.php";
 ?>
 <!DOCTYPE html>
 <html>
@@ -174,6 +174,6 @@ include "functions.php";
             ?>
             <p>Hint: Some holidays end with the word "day" and some end with the word "eve".</p>
         </section>
-        <script src="index.js"></script>
+        <script src="javascript/index.js"></script>
     </body>
 </html>
