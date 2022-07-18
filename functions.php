@@ -44,7 +44,13 @@ function getNumberOfDayUntilNextHoliday($todaysDateTwo, $holidays, $year) {
     }
     $date2 = date_create($year."-".$todaysDateTwo);
     $diff = date_diff($date1, $date2);
-    echo $diff->format("%a");
+    $result = $diff-> format("%a");
+    // echo $diff->format("%a");
+    if($result == "1") {
+        echo ($result." day");
+    } else {
+        echo ($result." days");
+    }
 }
 
 function getNextHoliday($todaysDateTwo, $holidays) {
