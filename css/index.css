@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background-color: black;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    font-size: 80px;
+    font-family: cursive;
+    letter-spacing: 3px;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 30px;
+    margin-left: 30px;
+    padding: 30px 30px 30px 30px;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+.hint {
+    color: white;
+    font-size: 25px;
+    font-family: cursive;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+}
+
+form, span.arrayOutput {
+    margin-left: 100px;
+    font-size: 60px;
+}
+
+input {
+    padding: 10px 10px 10px 10px;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+button {
+    margin-left: 90px;
+    font-size: 20px;
+    padding: 10px;
+    border: 5px dashed white;
+    border-radius: 30px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    filter: drop-shadow(0px 5px 4px #FF0000) drop-shadow(0px 5px 4px #FF7F00)  drop-shadow(0px 5px 4px #FFFF00)  drop-shadow(0px 5px 4px #00FF00)  drop-shadow(0px 5px 4px #0000FF)  drop-shadow(0px 5px 4px #2E2B5F)  drop-shadow(0px 5px 4px #8B00FF);
+}
+
+.color {
+    animation-name: color_change;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  @-webkit-keyframes color_change {
+    0% { background-color: yellow; color: black;}
+    25% { background-color: blue; color: white;}
+    50% { background-color: orange; color: black;}
+    75% { background-color: green; color:white;}
+    100% { background-color: red; color: black}
+  }
+  @-moz-keyframes color_change {
+    0% { background-color: yellow; color: black;}
+    25% { background-color: blue; color: white;}
+    50% { background-color: orange; color: black;}
+    75% { background-color: green; color:white;}
+    100% { background-color: red; color: black}
+  }
+  @-ms-keyframes color_change {
+    0% { background-color: yellow; color: black;}
+    25% { background-color: blue; color: white;}
+    50% { background-color: orange; color: black;}
+    75% { background-color: green; color:white;}
+    100% { background-color: red; color: black}
+  }
+  @-o-keyframes color_change {
+    0% { background-color: yellow; color: black;}
+    25% { background-color: blue; color: white;}
+    50% { background-color: orange; color: black;}
+    75% { background-color: green; color:white;}
+    100% { background-color: red; color: black}
+  }
+  @keyframes color_change {
+    0% { background-color: yellow; color: black;}
+    25% { background-color: blue; color: white;}
+    50% { background-color: orange; color: black;}
+    75% { background-color: green; color:white;}
+    100% { background-color: red; color: black}
+  }
+  
+  /* #grad1 {
+    height: 200px;
+    background: red; For browsers that do not support gradients
+    background: -webkit-linear-gradient(left, orange , yellow, green, cyan, blue, violet); For Safari 5.1 to 6.0
+    background: -o-linear-gradient(right, orange, yellow, green, cyan, blue, violet); For Opera 11.1 to 12.0
+    background: -moz-linear-gradient(right, orange, yellow, green, cyan, blue, violet); For Firefox 3.6 to 15
+    background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet); Standard syntax (must be last)
+  } */

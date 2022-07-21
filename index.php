@@ -10,7 +10,7 @@ include "php functions/functions.php";
         <title>Holiday Hangman</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
         <section>
@@ -40,7 +40,7 @@ include "php functions/functions.php";
                 getNextHoliday($todaysDateTwo, $holidays);
             ?>
             </p>
-            <button id="showHide" onclick="showHoliday()">Show Next Holiday</button>
+            <button class="color" id="showHide" onclick="showHoliday()">Show Next Holiday</button>
             <p>Guess the Next Holiday one letter at a time:</p>
             <?php
                 //creates an array of letters based on next holiday
@@ -103,26 +103,42 @@ include "php functions/functions.php";
                 
                 //updates the session variable containing user correctly guessed letters
                 $_SESSION["userArray"] = $holidayArrayTwo;
+                ?>
                 
+                <span class="arrayOutput">
+                    
+                <?php
                 //loops through second array that contains underscores and/or user correctly guessed letters
                 //prints it out
                 for($index = 0; $index < count($holidayArrayTwo); $index++) {
                     print_r($holidayArrayTwo[$index]);
                     echo(" ");
-                }
+               
                 
+                }
+                ?>
+                
+                </span>
+                
+                <?php
                 //if clear button is pressed
                 //restartGame function is called 
                 if(isset($_POST["restart"]) == true) {
                     restartGame();
                 }
+                ?>
                 
+                <span class="arrayOutput green">
+                
+                <?php
                 //once user guesses all correct letters, the game is ended 
                 //a message is printed out to the screen with the holiday name
                 if(array_diff($holidayArrayOne, $holidayArrayTwo) == []) {
-                    echo("<br>You guessed the holiday correctly!");
+                    echo("You guessed the holiday correctly!");
                 }
             ?>
+            
+            </span>
             
             <p>Guess the Next Holiday in one word:</p>
             <form method="POST">
@@ -140,7 +156,9 @@ include "php functions/functions.php";
                         break;
                     }
                 }
+                ?>
                 
+                <?php
                 //checks if submit button for solving holiday hangman in one word
                 //sets user input as a variable all lowercased
                 //if button was pressed, compares user input with the holiday variable 
@@ -151,18 +169,30 @@ include "php functions/functions.php";
                     $userInput = strtolower($_POST["wordGuessed"]);
                     if(strcmp($userInput, "") != 0) {
                         if(strcmp($userInput, $holiday) == 0) {
-                            echo ucfirst($userInput)." is the correct answer!";
+                            echo("<span class=\"arrayOutput green\">".ucfirst($userInput)." is the correct answer!");
                         } else {
-                            echo ucfirst($userInput)." is NOT the next holiday!";
+                            echo("<span class=\"arrayOutput red\">".ucfirst($userInput)." is NOT the next holiday!");
                         }
                     }
                 } else {
+                    ?>
+                    
+                    <span class="arrayOutput">
+                    
+                    <?php
+                    
                     for($index = 0; $index < count($holidayArrayTwo); $index++) {
                         print_r($holidayArrayTwo[$index]);
                         echo(" ");
                     }
+                    ?>
+                    </span>
+                    
+                    <?php
                 }
+                ?>
                 
+                <?php
                 //if clear button is pressed
                 //restart game function is called
                 //the last output is set to an empty string
@@ -172,7 +202,7 @@ include "php functions/functions.php";
                 }
 
             ?>
-            <p>Hint: Some holidays end with the word "day" and some end with the word "eve".</p>
+            <p class="hint">Hint: Some holidays end with the word "day" and some end with the word "eve".</p>
         </section>
         <script src="javascript/index.js"></script>
     </body>
