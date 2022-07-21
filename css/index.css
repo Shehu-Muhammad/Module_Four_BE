@@ -57,8 +57,32 @@ button {
     border-radius: 30px;
     font-weight: bold;
     letter-spacing: 3px;
-    margin-bottom: 30px;
-    margin-top: 20px;
+    margin-bottom: 100px;
+}
+
+input[type="submit"] {
+  background-color: red;
+  color: white;
+  border: 5px ridge blue;
+  border-bottom-right-radius: 30px;
+  border-top-right-radius: 30px;
+  font-size: 20px;
+  letter-spacing: 3px;
+}
+
+input[name="punctuation"] {
+  background-color: orange;
+  color: black;
+}
+
+input[name="letter"], input[name="word"] {
+  background-color: green;
+  color: black;
+}
+
+
+input[type="submit"]:hover {
+  cursor: pointer;
 }
 
 button:hover {

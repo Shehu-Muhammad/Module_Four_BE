@@ -34,13 +34,9 @@ include "php functions/functions.php";
                 $todaysDateTwo = date("m-d");
                 getNumberOfDayUntilNextHoliday($todaysDateTwo, $holidays, $year);
             ?>
-            <p>The Next Holiday is: </p>
-            <p hidden="hidden" id="currentHoliday">
-            <?php
-                getNextHoliday($todaysDateTwo, $holidays);
-            ?>
+            
             </p>
-            <button class="color" id="showHide" onclick="showHoliday()">Show Next Holiday</button>
+            
             <p>Guess the Next Holiday one letter at a time:</p>
             <?php
                 //creates an array of letters based on next holiday
@@ -203,6 +199,15 @@ include "php functions/functions.php";
 
             ?>
             <p class="hint">Hint: Some holidays end with the word "day" and some end with the word "eve".</p>
+
+            <p>The Next Holiday is: <span hidden="hidden" id="currentHoliday">
+            <?php
+                getNextHoliday($todaysDateTwo, $holidays);
+            ?>
+            </span></p>
+            <!-- <p hidden="hidden" id="currentHoliday"> -->
+            <button class="color" id="showHide" onclick="showHoliday()">Show Next Holiday</button>
+            
         </section>
         <script src="javascript/index.js"></script>
     </body>
