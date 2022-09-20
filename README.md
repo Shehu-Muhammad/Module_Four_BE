@@ -8,6 +8,10 @@
 	- Use of at least 1 function 
 - Published to GitHub
 	- Published to GitHub
+## Holiday Hangman
+## Screenshots
+![Holiday Hangman Top Half](https://github.com/Shehu-Muhammad/Module_Four_BE/blob/3e9d20e8236556d316e67097114ce150b2c352c5/Holiday_Hangman_TopHalf.png)
+![Holiday Hangman Bottom Half](https://github.com/Shehu-Muhammad/Module_Four_BE/blob/3e9d20e8236556d316e67097114ce150b2c352c5/Holiday_Hangman_BottomHalf.png)
 ## Built with
 * [HTML5](https://webplatform.github.io/docs/html/html5/) - The language used to create the content
 * [CSS3](https://devdocs.io/css/) - The language used to style the content
